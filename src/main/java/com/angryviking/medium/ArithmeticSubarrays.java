@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-// Issue 1630
+// Issue 1630 - Arithmetic Subarrays
 public class ArithmeticSubarrays {
 
     public List<Boolean> checkArithmeticSubarrays(int[] nums, int[] l, int[] r) {
