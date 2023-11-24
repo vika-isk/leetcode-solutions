@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-// Issue 1424
+// Issue 1424 - Diagonal Traverse II
 public class DiagonalTraverseII {
 
     public int[] findDiagonalOrder(List<List<Integer>> nums) {
