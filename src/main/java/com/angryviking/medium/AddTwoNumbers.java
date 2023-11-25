@@ -2,9 +2,8 @@ package com.angryviking.medium;
 
 /**
  * 2 - Add Two Numbers
- * https://leetcode.com/problems/add-two-numbers/description/
+ * https://leetcode.com/problems/add-two-numbers/
  */
-
 public class AddTwoNumbers {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {

@@ -1,32 +1,28 @@
 package com.angryviking.medium;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class SumOfAbsoluteDifferencesInASortedArrayTest {
 
-
-    @Test
-    void getSumAbsoluteDifferencesTest() {
-        int nums[] = {2,3,5};
-
-        SumOfAbsoluteDifferencesInASortedArray algorithm = new SumOfAbsoluteDifferencesInASortedArray();
-        int[] result = algorithm.getSumAbsoluteDifferences(nums);
-
-        int[] expectedResult = {4,3,5};
-        assertArrayEquals(expectedResult, result, "Wrong result");
+    private static Stream<Arguments> getSumAbsoluteDifferences() {
+        return Stream.of(
+                Arguments.of(new int[]{2,3,5}, new int[]{4,3,5}),
+                Arguments.of(new int[]{1,4,6,8,10}, new int[]{24,15,13,15,21})
+        );
     }
 
-
-    @Test
-    void getSumAbsoluteDifferencesTest2() {
-        int nums[] = {1,4,6,8,10};
-
+    @ParameterizedTest
+    @MethodSource("getSumAbsoluteDifferences")
+    void getSumAbsoluteDifferencesTest(int[] nums, int[] expectedResult) {
         SumOfAbsoluteDifferencesInASortedArray algorithm = new SumOfAbsoluteDifferencesInASortedArray();
         int[] result = algorithm.getSumAbsoluteDifferences(nums);
 
-        int[] expectedResult = {24,15,13,15,21};
         assertArrayEquals(expectedResult, result, "Wrong result");
     }
 
