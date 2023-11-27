@@ -54,8 +54,7 @@ public class KnightDialer {
 
         int amount = 0;
         for (int digit = 0; digit <= 9; digit++) {
-            amount += getDeeper(digit, n - 1) % mod;
-            amount = amount % mod;
+            amount = (amount + getDeeper(digit, n - 1)) % mod;
         }
 
         return amount;
@@ -72,8 +71,7 @@ public class KnightDialer {
 
         int amount = 0;
         for (int i = 0; i < mapping[digit].length; i++) {
-            amount += getDeeper(mapping[digit][i], depth - 1) % mod;
-            amount = amount % mod;
+            amount = (amount + getDeeper(mapping[digit][i], depth - 1)) % mod;
         }
         answers[depth][digit] = amount;
         return amount;
