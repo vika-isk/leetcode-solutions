@@ -54,17 +54,12 @@ public class NumberOfWaysToDivideALongCorridor {
         }
 
         Iterator<Integer> iter = amountOfDividersPosition.iterator();
-        int result = iter.next();
+        long result = iter.next();
         while (iter.hasNext()) {
-            int sum = result;
-            int current = iter.next();
-            for (int i = 1; i < current; i++) {
-                sum = (sum + result) % mod;
-            }
-            result = sum;
+            result = (result * iter.next()) % mod;
         }
 
-        return result;
+        return (int) result;
     }
 
     private int countPlants(int startPosition) {
